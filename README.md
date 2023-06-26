@@ -1,5 +1,7 @@
 # bpktech
 
+Candidate: Arvind Suthar
+
 ### Setup
 1. Clone the repo.
 2. Change location to project directory.
