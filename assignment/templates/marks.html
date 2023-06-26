@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Marks -->
+  <div class="container">
+    <h2>Marks</h2> 
+
+    <!-- Add Marks Button -->
+    <button class="btn btn-primary my-2" data-toggle="modal" data-target="#addMarksModal">Add Marks</button>
+
+    <!-- Subject Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>English</th>
+          <th>Mathematics</th>
+          <th>Science</th>
+          <th>Hindi</th>
+          <th>Social Science</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows go here -->
+        <tr>
+          <td>Mathematics</td>
+          <td>Mr. Johnson</td>
+          <td>Room 101</td>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td>Ms. Anderson</td>
+          <td>Room 202</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add Subject Modal -->
+  <div class="modal fade" id="addMarksModal" tabindex="-1" role="dialog" aria-labelledby="addMarksModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addMarksModalLabel">Add Marks</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Add subject form goes here -->
+          <form action="add-marks" method="post">
+            <div class="form-group">
+              <label for="studentid">Student ID</label>
+              <input type="number" class="form-control" id="studentid">
+            </div>
+            <div class="form-group">
+              <label for="english">English</label>
+              <input type="number" class="form-control" id="english">
+            </div>
+            <div class="form-group">
+              <label for="maths">Mathematics</label>
+              <input type="number" class="form-control" id="maths">
+            </div>
+            <div class="form-group">
+                <label for="science">Science</label>
+                <input type="number" class="form-control" id="science">
+            </div>
+            <div class="form-group">
+                <label for="hindi">Hindi</label>
+                <input type="number" class="form-control" id="hindi">
+            </div>
+            <div class="form-group">
+                <label for="ss">Social Science</label>
+                <input type="number" class="form-control" id="ss">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
