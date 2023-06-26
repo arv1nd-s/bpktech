@@ -19,14 +19,13 @@ from django.urls import path
 from assignment.views import *
 
 urlpatterns = [
-    path('/', homepage, name='HomePage'),
+    path('', homepage, name='HomePage'),
 
-    path('/students', students, name='StudentsPage'),
+    path('students/', students, name='StudentsPage'),
 
-    path('/marks', marks, name='MarksPage'),
+    path('marks/', marks, name='MarksPage'),
 
-    path('/reports', reports, name='ReportsPage'),
-
+    path('reports/', reports, name='ReportsPage'),
 
     path('admin/', admin.site.urls),
 ]

@@ -22,16 +22,16 @@
       </thead>
       <tbody>
         <!-- Table rows go here -->
+        {% for marks in marks_data %}
         <tr>
-          <td>Mathematics</td>
-          <td>Mr. Johnson</td>
-          <td>Room 101</td>
+          <td>{{ marks.student_id }}</td>
+          <td>{{ marks.english }}</td>
+          <td>{{ marks.maths }}</td>
+          <td>{{ marks.science }}</td>
+          <td>{{ marks.hindi }}</td>
+          <td>{{ marks.social_science }}</td>
         </tr>
-        <tr>
-          <td>Science</td>
-          <td>Ms. Anderson</td>
-          <td>Room 202</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
@@ -49,36 +49,37 @@
         </div>
         <div class="modal-body">
           <!-- Add subject form goes here -->
-          <form action="add-marks" method="post">
+          <form action="/marks/" method="post">
+            {% csrf_token %}
             <div class="form-group">
               <label for="studentid">Student ID</label>
-              <input type="number" class="form-control" id="studentid">
+              <input type="number" class="form-control" id="studentid" name="studentid">
             </div>
             <div class="form-group">
               <label for="english">English</label>
-              <input type="number" class="form-control" id="english">
+              <input type="number" class="form-control" id="english" name="english">
             </div>
             <div class="form-group">
               <label for="maths">Mathematics</label>
-              <input type="number" class="form-control" id="maths">
+              <input type="number" class="form-control" id="maths" name="maths">
             </div>
             <div class="form-group">
                 <label for="science">Science</label>
-                <input type="number" class="form-control" id="science">
+                <input type="number" class="form-control" id="science" name="science">
             </div>
             <div class="form-group">
                 <label for="hindi">Hindi</label>
-                <input type="number" class="form-control" id="hindi">
+                <input type="number" class="form-control" id="hindi" name="hindi">
             </div>
             <div class="form-group">
                 <label for="ss">Social Science</label>
-                <input type="number" class="form-control" id="ss">
-            </div>
+                <input type="number" class="form-control" id="ss" name="ss">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>
